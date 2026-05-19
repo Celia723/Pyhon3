@@ -1,5 +1,6 @@
 import random
 
+
 def gen_player_achievements() -> set:
     ACHIEVEMENTS = [
         "Crafting Genius", "World Savior", "Master Explorer",
@@ -10,6 +11,7 @@ def gen_player_achievements() -> set:
     ]
     n = random.randint(4, 8)
     return set(random.sample(ACHIEVEMENTS, n))
+
 
 if __name__ == "__main__":
     print("=== Achievement Tracker System ===")

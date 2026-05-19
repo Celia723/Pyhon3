@@ -1,5 +1,6 @@
 import math
 
+
 def get_player_pos():
     while (True):
         enter = input("Enter new coordinates as floats in format 'x, y, z': ")
@@ -8,7 +9,7 @@ def get_player_pos():
         if (len(parts) != 3):
             print("Invalid syntax")
             continue
-        
+
         cordinates = []
 
         for i in parts:
@@ -30,7 +31,7 @@ if __name__ == "__main__":
     print(f"Got a first tuple: {tuple(cordinates)}")
     x, y, z = cordinates
     print(f"It includes: X={x}, Y={y}, Z={z}")
-    print(f"Distance to center:")
+    print("Distance to center:")
     dist = math.sqrt(x*x + y*y + z*z)
     print(f"Distance to center: {round(dist, 4)}")
 

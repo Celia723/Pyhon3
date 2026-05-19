@@ -13,4 +13,3 @@ if __name__ == "__main__":
             print(f"Argument {index}: {arg}")
             index += 1
     print(f"Total arguments: {num_args}")
-    

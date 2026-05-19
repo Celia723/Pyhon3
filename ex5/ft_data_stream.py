@@ -7,7 +7,8 @@ Event = Tuple[str, str]
 
 def gen_event() -> Generator[Event, None, None]:
     players: List[str] = ["bob", "alice", "dylan", "charlie"]
-    list_action: List[str] = ["run", "eat", "sleep", "grab", "move", "climb", "swim"]
+    list_action: List[str] = ["run", "eat", "sleep",
+                              "grab", "move", "climb", "swim"]
 
     while True:
         name: str = random.choice(players)
@@ -44,5 +45,3 @@ if __name__ == "__main__":
     for delete in consume_event(tupla_list):
         print(f"Got event from list: {delete}")
         print(f"Remains in list: {tupla_list}")
-
-
