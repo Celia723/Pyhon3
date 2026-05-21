@@ -1,16 +1,17 @@
 import math
+from typing import List
 
 
-def get_player_pos():
+def get_player_pos() -> List[float]:
     while (True):
         enter = input("Enter new coordinates as floats in format 'x, y, z': ")
-        parts = enter.split(",")
+        parts: List[str] = enter.split(",")
 
         if (len(parts) != 3):
             print("Invalid syntax")
             continue
 
-        cordinates = []
+        cordinates: List[float] = []
 
         for i in parts:
             try:

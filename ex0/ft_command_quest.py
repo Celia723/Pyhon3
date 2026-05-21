@@ -7,7 +7,6 @@ if __name__ == "__main__":
     if (num_args == 1):
         print("No arguments provided!")
     else:
-        print(f"Arguments received: {num_args - 1}")
         index = 1
         for arg in sys.argv[1:]:
             print(f"Argument {index}: {arg}")

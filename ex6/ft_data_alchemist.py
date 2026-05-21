@@ -14,17 +14,13 @@ if __name__ == "__main__":
     print()
 
     # Lista con todos capitalizados (tu estilo)
-    players_capitalize: List[str] = []
-    for name in players:
-        players_capitalize.append(name.capitalize())
+    players_capitalize: List[str] = [name.capitalize() for name in players]
     print(f"New list with all names capitalized: {players_capitalize}")
     print()
 
     # Lista con solo los que ya estaban capitalizados
-    capitalize_only: List[str] = []
-    for name in players:
-        if name == name.capitalize():
-            capitalize_only.append(name)
+    capitalize_only: List[str] = [
+        name for name in players if name == name.capitalize()]
     print(f"New list of capitalized names only: {capitalize_only}")
     print()
 

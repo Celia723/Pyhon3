@@ -1,15 +1,17 @@
 import sys
+from typing import List
+from typing import Dict
 
 
-def create_inventory():  # el parseo
+def create_inventory() -> Dict[str, int]:  # el parseo
     inventory = {}
-    params = sys.argv[1:]  # NO TIENES Q RECORRELOS Y METERLOS?
+    params: List[str] = sys.argv[1:]  # NO TIENES Q RECORRELOS Y METERLOS?
     for p in params:
         if ":" not in p:
             print(f"Error- invalid parameter '{p}'")
             continue
 
-        item, qty = p.split(":", 1)
+        item, qty_str = p.split(":", 1)
 
         # Redundante
         if item in inventory:
@@ -18,7 +20,7 @@ def create_inventory():  # el parseo
 
         # Cantidad invalida
         try:
-            qty = int(qty)
+            qty = int(qty_str)
         except Exception as e:
             print(f"Quantity error for '{item}': {e}")
             continue
@@ -30,7 +32,7 @@ def create_inventory():  # el parseo
 
 if __name__ == "__main__":
     print("=== Inventory System Analysis ===")
-    inventory = create_inventory()
+    inventory: Dict[str, int] = create_inventory()
     print(f"Got inventory: {inventory}")  # show the entire inventory
     items = list(inventory.keys())        # show only de keys
     print(f"Item list: {inventory.keys()}")
